@@ -11,6 +11,7 @@ import Emblem from './components/Emblem';
 import Header from './components/Header';
 import NaviBar from './components/NaviBar';
 import Home from './containers/Home';
+import AddMagazine from './containers/AddMagazine'
 
 import Container from '@material-ui/core/Container';
 
@@ -26,7 +27,7 @@ function App() {
             <NaviBar/>
             <Switch>
               <Route exact path='/' component={Home}/>
-              <Route exact path='/create' component={() => <h1>CreateMagazine</h1>}/>
+              <Route exact path='/create' component={AddMagazine}/>
               <Route exact path='/magazinedetails/:id' component={() => <h1>MagazineDetails</h1>}/>
               <Route exact path='/delete' component={() => <h1>DeleteMagazine</h1>}/>
               <Route exact path='/about' component={() => <h1>About</h1>}/>

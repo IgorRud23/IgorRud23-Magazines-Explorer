@@ -27,5 +27,5 @@ private
   def magazines_params
     params.require(:magazine).permit(:name, :image_src, :discription, :release_date)
   end
-  
+
 end
