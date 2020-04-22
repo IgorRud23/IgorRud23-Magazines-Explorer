@@ -7,22 +7,23 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 
+const initialState = {
+  name: '',
+  image_src: '',
+  discription: '',
+  release_date: '',
+};
+
 class AddMagazine extends Component {
 
   constructor(props) {
       super(props)
-      this.state = {
-        name: '',
-        image_src: '',
-        discription: '',
-        release_date: '',
-      };
+      this.state = initialState
     };
 
     updateState = (key) => (e) => this.setState({ [key]: e.target.value })
 
     handleSave = () => {
-      // name, :image_src, :discription, :release_date)
       const options = {
       method: 'POST',
       body: JSON.stringify(this.state),
@@ -36,10 +37,10 @@ class AddMagazine extends Component {
 
     fetch('http://localhost:3000/api/magazines/create', options)
       .then(res => res.json())
-      .then(newBook => {
-        //dispatch(addItemToList(newBook));
-        console.log(newBook);
-        //setState(initState);
+      .then(newMagazine => {
+        this.props.dispatch(addItemToList(newMagazine));
+        console.log(newMagazine);
+        this.setState(initialState)
         alert('Successfully created!');
       }).catch(console.error);
     };
@@ -64,8 +65,4 @@ class AddMagazine extends Component {
   }
 };
 
-const mapDispatchToProps = () => {
-  return
-};
-
-export default connect(null, mapDispatchToProps)(AddMagazine);
+export default connect(null, null)(AddMagazine);
