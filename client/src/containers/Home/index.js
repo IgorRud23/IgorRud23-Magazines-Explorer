@@ -14,11 +14,12 @@ class Home extends Component {
     this.props.dispatch(getListOfMagazines())
   };
 
-  handleOpenItem() {
-
+  handleOpenItem = (magazineID) => () => {
+    this.props.history.push(`/magazinedetails/${magazineID}`);
   };
 
   render() {
+
     return (
       <section>
 
