@@ -8,8 +8,6 @@ const Navi = (props) => {
 
   const handleClick = path => () => {
     props.history.push(path);
-    console.clear();
-    console.log(props)
   };
 
   return(
