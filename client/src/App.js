@@ -11,8 +11,11 @@ import Emblem from './components/Emblem';
 import Header from './components/Header';
 import NaviBar from './components/NaviBar';
 import Home from './containers/Home';
-import AddMagazine from './containers/AddMagazine'
-import MagazineDetails from './components/MagDetails'
+import AddMagazine from './containers/AddMagazine';
+import MagazineDetails from './components/MagDetails';
+import About from './components/About';
+import NotFound from './components/NotFound';
+import Delete from './containers/Delete';
 
 import Container from '@material-ui/core/Container';
 
@@ -30,8 +33,8 @@ function App() {
               <Route exact path='/' component={Home}/>
               <Route exact path='/create' component={AddMagazine}/>
               <Route exact path='/magazinedetails/:id' component={MagazineDetails}/>
-              <Route exact path='/delete' component={() => <h1>DeleteMagazine</h1>}/>
-              <Route exact path='/about' component={() => <h1>About</h1>}/>
+              <Route exact path='/delete' component={Delete}/>
+              <Route exact path='/about' component={About}/>
             </Switch>
           </div>
         </Container>

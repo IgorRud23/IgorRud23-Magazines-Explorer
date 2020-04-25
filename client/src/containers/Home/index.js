@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router';
 import {connect} from 'react-redux';
 
 import {getListOfMagazines} from '../../redux-bank/actions/list'
