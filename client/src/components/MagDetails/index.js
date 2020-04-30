@@ -9,12 +9,9 @@ import Paper from '@material-ui/core/Paper';
 
 class MagazineDetails extends Component {
 
-  componentDidMount(){
-    console.log('Igor, next will be display this props')
-    console.log(this.props)
-    console.log(this.props.match.params.id)
+  componentDidMount() {
     this.props.dispatch(getListOfMagazines())
-      };
+  };
 
     render() {
 
@@ -27,26 +24,24 @@ class MagazineDetails extends Component {
       }
       return (
         <section>
-          <Typography align='center' variant='h6' color='primary' gutterBottom>MAGAZINE INFO</Typography>
+          <br/><Typography align='center' variant='h6' color='primary' gutterBottom>MAGAZINE INFO</Typography>
             <br/>
               <Paper elevation={7} className='App-column-center'>
 
-                <Typography gutterBottom><b>{magazine.name}</b></Typography>
-                <img src={magazine.image_src} alt='Image of event' />
+                <Typography variant='h6' gutterBottom><b>{magazine.name}</b></Typography>
+                <br/><img src={magazine.image_src} alt='Image of event' style={{maxWidth: '350px'}}/>
                 <Typography paragraph>{magazine.discription}</Typography>
                 <Typography gutterBottom>Release date: {magazine.release_date}</Typography>
 
               </Paper>
         </section >
-  )
+      )
     };
-
 };
 
 function mapStateToProps(state) {
   return(
     state.list
-
   )
 };
 

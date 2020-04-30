@@ -4,8 +4,8 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 const Navi = (props) => {
-  const currentPath = props.location.pathname;
 
+  const currentPath = props.location.pathname;
   const handleClick = path => () => {
     props.history.push(path);
   };
@@ -19,6 +19,5 @@ const Navi = (props) => {
     </ButtonGroup>
   )
 };
-
 
 export default withRouter(Navi);

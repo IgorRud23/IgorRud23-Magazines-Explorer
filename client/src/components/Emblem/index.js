@@ -8,7 +8,7 @@ const Emblem = () => {
     <div>
       <img src={logo} className='App-logo' alt='logo'/>
 
-      <Typography align='center' ><b>magazines is a book about life arround us</b></Typography>
+      <Typography align='center'><b>-The See and Do, Laugh and Learn-</b></Typography>
 
     </div>
   )

@@ -9,7 +9,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Button from '@material-ui/core/Button';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-
+import Container from '@material-ui/core/Container';
 
 class Delete extends Component {
 
@@ -40,12 +40,13 @@ const options = {
   render() {
     return(
       <section>
-
+      
+        <Container maxWidth='md'>
         <Typography variant='h4' color='primary' align='center'>Magazines List</Typography>
 
-          <List className="App-column-center">
+          <List>
               {this.props.data.map((magazine, index) => (
-                <ListItem>
+                <ListItem key={magazine.id} divider>
                   <Typography>{index + 1}: {magazine.name}</Typography>
                   <ListItemSecondaryAction>
                   <Button onClick={this.handleDelete(magazine.id)} variant='contained' color='primary'>delete</Button>
@@ -53,6 +54,7 @@ const options = {
                 </ListItem>
               ))}
           </List>
+        </Container>
 
       </section>
     )

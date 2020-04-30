@@ -7,6 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
+function hello1() {
+
+};
+
 class Home extends Component {
 
   componentDidMount() {
@@ -18,21 +22,20 @@ class Home extends Component {
   };
 
   render() {
-
     return (
       <section>
 
-        <Typography variant='h4' color='primary'>Magazines List</Typography>
+        <Typography variant='h4' color='primary' align='left'>Magazines List</Typography>
 
-          <List className="App-column-center">
+          <List className="App-column-center" >
               {this.props.data.map((magazine, index) => (
                 <ListItem key={magazine.id} button onClick={this.handleOpenItem(magazine.id)} divider>
-                  <Typography>{index + 1}: {magazine.name}</Typography>
+                  <Typography> {index + 1}: {magazine.name}</Typography>
                 </ListItem>
               ))}
           </List>
 
-  </section>
+      </section>
     )
   }
 };
@@ -42,5 +45,6 @@ function mapStateToProps(state) {
     state.list
   )
 };
+
 
 export default connect(mapStateToProps, null)(Home);

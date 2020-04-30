@@ -16,9 +16,9 @@ const initialState = {
 
 class AddMagazine extends Component {
 
-  constructor(props) {
-      super(props)
-      this.state = initialState
+    constructor(props) {
+        super(props)
+        this.state = initialState
     };
 
     updateState = (key) => (e) => this.setState({ [key]: e.target.value })
@@ -45,24 +45,25 @@ class AddMagazine extends Component {
       }).catch(console.error);
     };
 
-  render() {
-    return (
+    render() {
 
-      <main>
-      <Typography variant='h4' color='primary'>Put Book on List</Typography>
+      return (
 
-      <form noValidate autoComplete='off' className="App-column-center">
-        <TextField onChange={this.updateState('name')} value={this.state.name} label='name' margin='normal' placeholder='magazine name'/>
-        <TextField onChange={this.updateState('image_src')} value={this.state.image_src} label='image src' margin='normal' placeholder='paste url here'/>
-        <TextField onChange={this.updateState('discription')} value={this.state.discription} label='discription' margin='normal' placeholder='short discription'/>
-        <TextField onChange={this.updateState('release_date')} value={this.state.release_date} label='release date' margin='normal' placeholder='year'/>
+        <main>
+        <Typography variant='h4' color='primary'>Add Magazine to List</Typography>
 
-        <Button color='primary' variant='contained' onClick={this.handleSave}>Create</Button>
-      </form>
-    </main>
+        <form noValidate autoComplete='off' className="App-column-center">
+          <TextField onChange={this.updateState('name')} value={this.state.name} label='name' margin='normal' placeholder='magazine name'/>
+          <TextField onChange={this.updateState('image_src')} value={this.state.image_src} label='image src' margin='normal' placeholder='paste url here'/>
+          <TextField onChange={this.updateState('discription')} value={this.state.discription} label='discription' margin='normal' placeholder='short discription'/>
+          <TextField onChange={this.updateState('release_date')} value={this.state.release_date} label='release date' margin='normal' placeholder='year'/>
 
-    )
-  }
+          <Button color='primary' variant='contained' onClick={this.handleSave}>Create</Button>
+        </form>
+      </main>
+
+      )
+    }
 };
 
 export default connect(null, null)(AddMagazine);
