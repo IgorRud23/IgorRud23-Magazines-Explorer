@@ -13,6 +13,7 @@ Installation
 * rails db:seed to seed the database
 * run rails s to launch a local server
 * cd client
+* npm install
 * npm start
 
 Usage

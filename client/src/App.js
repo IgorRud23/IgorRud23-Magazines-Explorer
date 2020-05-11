@@ -46,7 +46,7 @@ function App() {
           </div>
         </Container>
       </Provider>
-    </HashRouter>
+   </HashRouter>
   );
 };
 

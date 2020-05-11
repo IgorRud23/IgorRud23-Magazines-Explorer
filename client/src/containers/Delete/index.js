@@ -17,11 +17,6 @@ componentDidMount() {
   this.props.dispatch(getListOfMagazines())
 };
 
-handleOpenItem = (magazineID) => () => {
-
-  this.props.history.push(`/magazinedetails/${magazineID}`);
-};
-
 handleDelete = (magazineID) => () => {
 console.log(magazineID)
 this.props.dispatch(deleteItemFromList(magazineID));
@@ -40,7 +35,7 @@ const options = {
   render() {
     return(
       <section>
-      
+
         <Container maxWidth='md'>
         <Typography variant='h4' color='primary' align='center'>Magazines List</Typography>
 

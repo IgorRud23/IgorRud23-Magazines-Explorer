@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import {connect} from 'react-redux';
 import {addItemToList} from '../../redux-bank/actions/list';
+import {createMag} from '../../redux-bank/actions/list';
 
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -21,35 +22,37 @@ class AddMagazine extends Component {
         this.state = initialState
     };
 
-    updateState = (key) => (e) => this.setState({ [key]: e.target.value })
+    updateState = (key) => (e) => {
+      this.setState({ [key]: e.target.value })
+}
 
     handleSave = () => {
-      const options = {
-      method: 'POST',
-      body: JSON.stringify(this.state),
-      credentials: 'omit',
-      headers:{
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-    };
-
-
-    fetch('http://localhost:3000/api/magazines/create', options)
-      .then(res => res.json())
-      .then(newMagazine => {
-        this.props.dispatch(addItemToList(newMagazine));
-        console.log(newMagazine);
+    //   const options = {
+    //   method: 'POST',
+    //   body: JSON.stringify(this.state),
+    //   credentials: 'omit',
+    //   headers:{
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json',
+    //   },
+    // };
+    //
+    //
+    // fetch('http://localhost:3000/api/magazines/create', options)
+    //   .then(res => res.json())
+    //   .then(newMagazine => {
+    //     this.props.dispatch(addItemToList(newMagazine));
+    this.props.createMag(this.state)
         this.setState(initialState)
-        alert('Successfully created!');
-      }).catch(console.error);
+    //     alert('Successfully created!');
+    //   }).catch(console.error);
     };
 
     render() {
 
       return (
 
-        <main>
+      <main>
         <Typography variant='h4' color='primary'>Add Magazine to List</Typography>
 
         <form noValidate autoComplete='off' className="App-column-center">
@@ -66,4 +69,9 @@ class AddMagazine extends Component {
     }
 };
 
-export default connect(null, null)(AddMagazine);
+const mapDispatchToProps = {
+createMag
+};
+
+
+export default connect(null, mapDispatchToProps)(AddMagazine);

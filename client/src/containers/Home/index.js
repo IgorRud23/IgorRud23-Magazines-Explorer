@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
+
 class Home extends Component {
 
   componentDidMount() {
@@ -18,6 +19,7 @@ class Home extends Component {
   };
 
   render() {
+
     return (
       <section>
 
@@ -41,6 +43,5 @@ function mapStateToProps(state) {
     state.list
   )
 };
-
 
 export default connect(mapStateToProps, null)(Home);
